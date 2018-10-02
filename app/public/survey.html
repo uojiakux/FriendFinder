@@ -186,7 +186,7 @@
 
 
       <div class="text-center">
-        <a href="/results"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Submit My Answers! </button></a>
+        <a href="/results"><button class="btn btn-lg btn-primary" id="submit-button"><span class="fa fa-list-alt"></span> Submit My Answers! </button></a>
       </div>
       <br><br>
 </div>
@@ -195,12 +195,75 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-      <scrip>
+      
         <!-- ADD NEXT THE INTNERAL JAVASCRIPT CODE THAT WE PRACTICED IN CLASS.  -->
         <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
         <!-- double check if this script section should be placed AFTER the above scripts or if it should be placed before.  -->\
         <!-- This is the coded where you determine the user's most compatible friend using the guide in homework instructions.  -->
-      </scrip>
+      <script>
+      
+      // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+      // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+      // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+      // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+
+       $("#submit-button").on("click", function(event) {
+       event.preventDefault();
+
+        // Here we grab the form elements
+        // HERE YOU GRAB THE VALUES OF WHAT THE USER CHOOSES FROM THE DROP DOWN OPTIONS
+        var userAnswers = {
+          customerName: $("#reserve-name").val().trim(),
+          phoneNumber: $("#reserve-phone").val().trim(),
+          customerEmail: $("#reserve-email").val().trim(),
+          customerID: $("#reserve-unique-id").val().trim()
+        };
+
+        console.log(userAnswers);
+        runTableQuery();
+
+        // YOU WANT THIS POST TO RUN A QUERY ON YOUR FRIENDS ARRAY SET AND POST ON THE MODULE WHICH CHARACTER IS THE MOST COMPATIBLE AFTERWARDS. 
+        function runTableQuery() {
+        // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+        $.ajax({ url: "/api/tables", method: "GET" })
+            .then(function(tableData) {
+
+            // Here we then log the tableData to console, where it will show up as an object.
+            console.log(tableData);
+            console.log("------------------------------------");
+
+            // Loop through and display each of the customers
+            for (var i = 0; i < tableData.length; i++) {
+
+              // Get a reference to the tableList element and populate it with tables
+              var tableList = $("#tableList");
+
+              // Then display the fields in the HTML (Section Name, Date, URL)
+              var listItem = $("<li class='list-group-item mt-4'>");
+
+              listItem.append(
+                $("<h2>").text("Table #" + (i + 1)),
+                $("<hr>"),
+                $("<h2>").text("ID: " + tableData[i].customerID),
+                $("<h2>").text("Name: " + tableData[i].customerName),
+                $("<h2>").text("Email: " + tableData[i].customerEmail),
+                $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+              );
+
+              tableList.append(listItem);
+            }})
+      }
+
+            // Clear the form when submitting
+            $("#reserve-name").val("");
+            $("#reserve-phone").val("");
+            $("#reserve-email").val("");
+            $("#reserve-unique-id").val("");
+
+      });
+      
+      </script>
 
     </body>
 </html>
