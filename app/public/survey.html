@@ -202,16 +202,13 @@
         <!-- This is the coded where you determine the user's most compatible friend using the guide in homework instructions.  -->
       <script>
       
-      // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-      // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-      // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-      // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
+      // In this code, jQuery is used to "download" the data from our server
+      // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
+      // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
 
        $("#submit-button").on("click", function(event) {
        event.preventDefault();
 
-        // Here we grab the form elements
         // HERE YOU GRAB THE VALUES OF WHAT THE USER CHOOSES FROM THE DROP DOWN OPTIONS
         var userAnswers = {
           customerName: $("#reserve-name").val().trim(),
@@ -225,35 +222,17 @@
 
         // YOU WANT THIS POST TO RUN A QUERY ON YOUR FRIENDS ARRAY SET AND POST ON THE MODULE WHICH CHARACTER IS THE MOST COMPATIBLE AFTERWARDS. 
         function runTableQuery() {
-        // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-        $.ajax({ url: "/api/tables", method: "GET" })
-            .then(function(tableData) {
 
-            // Here we then log the tableData to console, where it will show up as an object.
-            console.log(tableData);
+        $.ajax({ url: "/api/friends", method: "GET" })
+            .then(function(friendsData) {
+
+            console.log(friendsData);
             console.log("------------------------------------");
 
-            // Loop through and display each of the customers
-            for (var i = 0; i < tableData.length; i++) {
+            // THIS IS THE CODE WHERE YOU DETERMINE THE USER'S MOST COMPATIBLE FRIEND USING THE GUIDE IN HOMEWORK INSTRUCTIONS.
 
-              // Get a reference to the tableList element and populate it with tables
-              var tableList = $("#tableList");
-
-              // Then display the fields in the HTML (Section Name, Date, URL)
-              var listItem = $("<li class='list-group-item mt-4'>");
-
-              listItem.append(
-                $("<h2>").text("Table #" + (i + 1)),
-                $("<hr>"),
-                $("<h2>").text("ID: " + tableData[i].customerID),
-                $("<h2>").text("Name: " + tableData[i].customerName),
-                $("<h2>").text("Email: " + tableData[i].customerEmail),
-                $("<h2>").text("Phone: " + tableData[i].phoneNumber)
-              );
-
-              tableList.append(listItem);
-            }})
-      }
+            })
+            }
 
             // Clear the form when submitting
             $("#reserve-name").val("");
