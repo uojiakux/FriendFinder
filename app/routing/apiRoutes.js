@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var friends = require("../data/friends");
+var friendsData = require("../data/friends");
 
 // ===============================================================================
 // ROUTING
@@ -18,7 +18,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function(req, res) {
-    res.json(friends);
+    res.json(friendsData);
   });
 
   // API POST Requests
@@ -33,7 +33,7 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware
-      friends.push(req.body);
+      friendsData.push(req.body);
 
   });
 
@@ -43,7 +43,7 @@ module.exports = function(app) {
 
   app.post("/api/clear", function(req, res) {
     // Empty out the arrays of data
-    friends.length = [];
+    friendsData.length = [];
 
     res.json({ ok: true });
   });
