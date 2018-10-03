@@ -6,8 +6,6 @@
     <title>FriendFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
 
@@ -24,18 +22,8 @@
       <input type="text" name="Photo">
       <hr>
 
-      <div class="btn-group" id="first-drop-down">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-          Dropdown <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Choice1</a></li>
-          <li><a href="#">Choice2</a></li>
-          <li><a href="#">Choice3</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Choice..</a></li>
-        </ul>
-      </div>
+    <h6>Please answer the following questions on a scale from 1 (Strongly Disagree) to 5 (Strongly Agree)</h6>
+    <br>
 
     <h4>Question 1</h4>
       <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
@@ -43,12 +31,12 @@
         <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="first-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -56,15 +44,15 @@
     <h4>Question 2</h4>
       <h6>Generally speaking, you rely more on your experience than your imagination.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="second-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -72,15 +60,15 @@
     <h4>Question 3</h4>
       <h6>You find it easy to stay relaxed and focused even when there is some pressure.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="third-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -88,15 +76,15 @@
     <h4>Question 4</h4>
       <h6>You rarely do something just out of sheer curiosity.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="fourth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -104,15 +92,15 @@
     <h4>Question 5</h4>
       <h6>People can rarely upset you.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop5" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="fifth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -120,15 +108,15 @@
     <h4>Question 6</h4>
       <h6>It is often difficult for you to relate to other people’s feelings.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop6" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="sixth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -136,15 +124,15 @@
     <h4>Question 7</h4>
       <h6>In a discussion, truth should be more important than people’s sensitivities.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop7" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="seventh-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -152,15 +140,15 @@
     <h4>Question 8</h4>
       <h6>You rarely get carried away by fantasies and ideas.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop8" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="eigth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -168,15 +156,15 @@
     <h4>Question 9</h4>
       <h6>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop9" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu" id="ninth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -184,15 +172,15 @@
     <h4>Question 10</h4>
       <h6>You feel more energetic after spending time with a group of people.</h6>
       <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop10" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select an Option
         </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">1 (Strongly Disagree)</a>
+        <div class="dropdown-menu"id="tenth-drop" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">1</a>
           <a class="dropdown-item" href="#">2</a>
           <a class="dropdown-item" href="#">3</a>
           <a class="dropdown-item" href="#">4</a>
-          <a class="dropdown-item" href="#">5 (Strongly Agree)</a>
+          <a class="dropdown-item" href="#">5</a>
         </div>
       </div>
       <br><br>
@@ -204,40 +192,82 @@
       <br><br>
 </div>
 
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-      
-        <!-- ADD NEXT THE INTNERAL JAVASCRIPT CODE THAT WE PRACTICED IN CLASS.  -->
-        <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
-        <!-- double check if this script section should be placed AFTER the above scripts or if it should be placed before.  -->\
-        <!-- This is the coded where you determine the user's most compatible friend using the guide in homework instructions.  -->
       <script>
       
       // In this code, jQuery is used to "download" the data from our server
       // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
       // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
 
-      $(".dropdown-menu li a").click(function(){
-      $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+      userArray = [];
+
+      $("#first-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop1:first-child").html($(this).text());
+        userArray.push($(this).text());
       });
 
+      $("#second-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop2:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#third-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop3:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#fourth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop4:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#fifth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop5:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#sixth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop6:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#seventh-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop7:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#eigth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop8:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#ninth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop9:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
+
+      $("#tenth-drop a").click(function(){
+        event.preventDefault();
+        $("#btnGroupDrop10:first-child").html($(this).text());
+        userArray.push($(this).text());
+      });
 
        $("#submit-button").on("click", function(event) {
        event.preventDefault();
 
-        // HERE YOU GRAB THE VALUES OF WHAT THE USER CHOOSES FROM THE DROP DOWN OPTIONS
-        var userAnswers = {
-          customerName: $("#reserve-name").val().trim(),
-          phoneNumber: $("#reserve-phone").val().trim(),
-          customerEmail: $("#reserve-email").val().trim(),
-          customerID: $("#reserve-unique-id").val().trim()
-        };
-
-        userArray = [];
-        console.log(userAnswers);
-        userArray.push(userAnswers);
+        console.log("User Choices: " + userArray);
         runTotalDifferenceQuery();
 
         // YOU WANT THIS POST TO RUN A QUERY ON YOUR FRIENDS ARRAY SET AND POST ON THE MODULE WHICH CHARACTER IS THE MOST COMPATIBLE AFTERWARDS. 
@@ -249,18 +279,23 @@
             console.log(friendsData);
             console.log("------------------------------------");
 
+            for (var i = 0; i < friendsData.length; i++) {
+                 console.log(friendsData[i].scores);
+                }
+
             // THIS IS THE CODE WHERE YOU DETERMINE THE USER'S MOST COMPATIBLE FRIEND USING THE GUIDE IN HOMEWORK INSTRUCTIONS.
 
             // var arr1 = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]; 
             // var arr2 = [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]; 
-                totalDifference = 0;
+            //     totalDifference = 0;
 
-            for (var i = 0; i < arr1.length; i++) {
-                 totalDifference += Math.abs(friendsData[i].scores[i] - userArray[i]);
-                }
+            // for (var i = 0; i < arr1.length; i++) {
+            //      totalDifference += Math.abs(friendsData[i].scores[i] - userArray[i]);
+            //     }
 
-                console.log(totalDifference);
+            //     console.log(totalDifference);
 
+            // LAST STEPS
             // The closest match will be the user with the least amount of difference.
             // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
             // The modal should display both the name and picture of the closest match.
@@ -268,12 +303,6 @@
 
             })
             }
-
-            // Clear the form when submitting
-            $("#reserve-name").val("");
-            $("#reserve-phone").val("");
-            $("#reserve-email").val("");
-            $("#reserve-unique-id").val("");
 
       });
       
