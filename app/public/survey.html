@@ -24,6 +24,19 @@
       <input type="text" name="Photo">
       <hr>
 
+      <div class="btn-group" id="first-drop-down">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Choice1</a></li>
+          <li><a href="#">Choice2</a></li>
+          <li><a href="#">Choice3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Choice..</a></li>
+        </ul>
+      </div>
+
     <h4>Question 1</h4>
       <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
       <div class="btn-group" role="group">
@@ -206,6 +219,11 @@
       // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
       // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
 
+      $(".dropdown-menu li a").click(function(){
+      $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+      });
+
+
        $("#submit-button").on("click", function(event) {
        event.preventDefault();
 
@@ -217,11 +235,13 @@
           customerID: $("#reserve-unique-id").val().trim()
         };
 
+        userArray = [];
         console.log(userAnswers);
-        runTableQuery();
+        userArray.push(userAnswers);
+        runTotalDifferenceQuery();
 
         // YOU WANT THIS POST TO RUN A QUERY ON YOUR FRIENDS ARRAY SET AND POST ON THE MODULE WHICH CHARACTER IS THE MOST COMPATIBLE AFTERWARDS. 
-        function runTableQuery() {
+        function runTotalDifferenceQuery() {
 
         $.ajax({ url: "/api/friends", method: "GET" })
             .then(function(friendsData) {
@@ -230,6 +250,21 @@
             console.log("------------------------------------");
 
             // THIS IS THE CODE WHERE YOU DETERMINE THE USER'S MOST COMPATIBLE FRIEND USING THE GUIDE IN HOMEWORK INSTRUCTIONS.
+
+            // var arr1 = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]; 
+            // var arr2 = [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]; 
+                totalDifference = 0;
+
+            for (var i = 0; i < arr1.length; i++) {
+                 totalDifference += Math.abs(friendsData[i].scores[i] - userArray[i]);
+                }
+
+                console.log(totalDifference);
+
+            // The closest match will be the user with the least amount of difference.
+            // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
+            // The modal should display both the name and picture of the closest match.
+
 
             })
             }
