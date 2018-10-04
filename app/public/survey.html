@@ -16,10 +16,10 @@
   
     <h4>About You</h4>
       <h6>Name (Required)</h6>
-      <input type="text" name="Name">
+      <input type="text" name="Name" id="user-name">
 
       <h6>Link to Photo Image (Required)</h6>
-      <input type="text" name="Photo">
+      <input type="text" name="Photo" id="user-photo">
       <hr>
 
     <h6>Please answer the following questions on a scale from 1 (Strongly Disagree) to 5 (Strongly Agree)</h6>
@@ -217,13 +217,10 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
       <script>
-      
-      // In this code, jQuery is used to "download" the data from our server
-      // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
-      // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
 
       userArray = [];
 
+      // THIS CODE CREATES ANIMATION TO OUR DROPDOWN BUTTONS.
       $("#first-drop a").click(function(){
         event.preventDefault();
         $("#btnGroupDrop1:first-child").html($(this).text());
@@ -284,29 +281,27 @@
         userArray.push($(this).text());
       });
 
+
+      // THIS CODE RUNS THE QUERY AFTER THE USER CLICKS SUBMIT
        $("#submit-button").on("click", function(event) {
        event.preventDefault();
 
+      // Figure out why this is not working**********
+       var userName = $("#user-name").val().trim();
+       var userPhoto = $("#user-photo").val().trim();
+
         console.log("User Choices: " + userArray);
         runTotalDifferenceQuery();
-
-        // YOU WANT THIS POST TO RUN A QUERY ON YOUR FRIENDS ARRAY SET AND POST ON THE MODULE WHICH CHARACTER IS THE MOST COMPATIBLE AFTERWARDS. 
+ 
         function runTotalDifferenceQuery() {
 
         $.ajax({ url: "/api/friends", method: "GET" })
             .then(function(friendsData) {
 
-            console.log(friendsData);
-            console.log("------------------------------------");
+            // console.log(friendsData);
+            // console.log("------------------------------------");
 
-            // for (var i = 0; i < friendsData.length; i++) {
-            //      console.log(friendsData[i].scores);
-            //     }
-
-            // THIS IS THE CODE WHERE YOU DETERMINE THE USER'S MOST COMPATIBLE FRIEND USING THE GUIDE IN HOMEWORK INSTRUCTIONS.
-
-            // var arr1 = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]; 
-            // var arr2 = [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]; 
+            // This is the code where you determine the user's most compatible friend. 
             totalDifferenceZero = 0;
             totalDifferenceOne = 0;
 
@@ -323,27 +318,18 @@
 
                 if (totalDifferenceZero < totalDifferenceOne) {
                   console.log(friendsData[0]);
-                  $(".modal-title").html("<h1 align='center'> Your match is " + friendsData[0].name + "!</h1>");
+                  $(".modal-title").html("<h1 align='center'> Hello " + userName + ". " + "Your match is <b>" + friendsData[0].name + "</b>!</h1>");
                   $(".modal-body").html(`<img src='${friendsData[0].photo}' alt='picture of friend'>`);
                   
                 } 
                 else if (totalDifferenceOne < totalDifferenceZero) {
                   console.log(friendsData[1]);
-                  $(".modal-title").html("<h1 align='center'> Your match is " + friendsData[1].name + "!</h1>");
-                  $(".modal-body").html(`<img src='${friendsData[0].photo}' alt='picture of friend'>`);
+                  $(".modal-title").html("<h1 align='center'> Hello " + userName + ". " + "Your match is <b>" + friendsData[1].name + "</b>!</h1>");
+                  $(".modal-body").html(`<img src='${friendsData[1].photo}' alt='picture of friend'>`);
                 }
-
-
-            // LAST STEPS
-            // The closest match will be the user with the least amount of difference.
-            // Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-            // The modal should display both the name and picture of the closest match.
-
-
             })
-            }
-
-      });
+          }
+        });
       
       </script>
 
