@@ -6,6 +6,7 @@
     <title>FriendFinder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 
@@ -203,9 +204,10 @@
               </button>
             </div>
             <div class="modal-body">
-              ...
+        
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-secondary">Thank you for using Friend Finder!</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
           </div>
@@ -220,6 +222,7 @@
 
       userArray = [];
 
+      // how do I make this code so that it only happens once? And not multiple times?*********
       // THIS CODE CREATES ANIMATION TO OUR DROPDOWN BUTTONS.
       $("#first-drop a").click(function(){
         event.preventDefault();
@@ -286,7 +289,6 @@
        $("#submit-button").on("click", function(event) {
        event.preventDefault();
 
-      // Figure out why this is not working**********
        var userName = $("#user-name").val().trim();
        var userPhoto = $("#user-photo").val().trim();
 
@@ -319,13 +321,18 @@
                 if (totalDifferenceZero < totalDifferenceOne) {
                   console.log(friendsData[0]);
                   $(".modal-title").html("<h1 align='center'> Hello " + userName + ". " + "Your match is <b>" + friendsData[0].name + "</b>!</h1>");
-                  $(".modal-body").html(`<img src='${friendsData[0].photo}' alt='picture of friend'>`);
-                  
+                  $(".modal-body").append(`<img src='${userPhoto}' alt='picture of user'>`);
+                  $(".modal-body").append("<img src='https://cdn.shopify.com/s/files/1/0080/8372/products/tattly_classic_red_heart_team_tattly_00_1024x1024@2x.png?v=1531940498' alt='heart image' width='60px'>");
+                  $(".modal-body").append(`<img src='${friendsData[0].photo}' alt='picture of friend'>`);    
+                  // $(".modal-footer").prepend("<p>Thank you for using Friend Finder!</p>");            
                 } 
                 else if (totalDifferenceOne < totalDifferenceZero) {
                   console.log(friendsData[1]);
                   $(".modal-title").html("<h1 align='center'> Hello " + userName + ". " + "Your match is <b>" + friendsData[1].name + "</b>!</h1>");
-                  $(".modal-body").html(`<img src='${friendsData[1].photo}' alt='picture of friend'>`);
+                  $(".modal-body").append(`<img src='${userPhoto}' alt='picture of user'>`);
+                  $(".modal-body").append("<img src='https://cdn.shopify.com/s/files/1/0080/8372/products/tattly_classic_red_heart_team_tattly_00_1024x1024@2x.png?v=1531940498' alt='heart image' width='60px'>");
+                  $(".modal-body").append(`<img src='${friendsData[1].photo}' alt='picture of friend'>`);
+                  // $(".modal-footer").prepend("<p>Thank you for using Friend Finder!</p>"); 
                 }
             })
           }
