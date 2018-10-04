@@ -222,63 +222,62 @@
 
       userArray = [];
 
-      // how do I make this code so that it only happens once? And not multiple times?*********
       // THIS CODE CREATES ANIMATION TO OUR DROPDOWN BUTTONS.
-      $("#first-drop a").click(function(){
+      $("#first-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop1:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#second-drop a").click(function(){
+      $("#second-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop2:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#third-drop a").click(function(){
+      $("#third-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop3:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#fourth-drop a").click(function(){
+      $("#fourth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop4:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#fifth-drop a").click(function(){
+      $("#fifth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop5:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#sixth-drop a").click(function(){
+      $("#sixth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop6:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#seventh-drop a").click(function(){
+      $("#seventh-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop7:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#eigth-drop a").click(function(){
+      $("#eigth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop8:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#ninth-drop a").click(function(){
+      $("#ninth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop9:first-child").html($(this).text());
         userArray.push($(this).text());
       });
 
-      $("#tenth-drop a").click(function(){
+      $("#tenth-drop a").one("click", function(){
         event.preventDefault();
         $("#btnGroupDrop10:first-child").html($(this).text());
         userArray.push($(this).text());
