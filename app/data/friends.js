@@ -8,7 +8,7 @@
 var friendsArray = [
     {
       "name":"Stephanie",
-      "photo":"https://i.pinimg.com/736x/a1/0a/07/a10a07cbca4baaa45e4d566687a3c243.jpg",
+      "photo":"https://media.licdn.com/dms/image/C4E03AQGpDpkOG2PY-Q/profile-displayphoto-shrink_200_200/0?e=1540425600&v=beta&t=8IYWGUe5emQc9qQVh3O6nuCxG8iKuW_0tY8DAUf4EYA",
       "scores":[
           5,
           1,
@@ -23,8 +23,8 @@ var friendsArray = [
         ]
     },
     {
-      "name":"Dilan",
-      "photo":"https://a.wattpad.com/cover/139413696-352-k183136.jpg",
+      "name":"Rose",
+      "photo":"https://i.pinimg.com/custom_covers/216x146/175218310441359271_1413952826.jpg",
       "scores":[
           3,
           1,
